@@ -1,0 +1,13 @@
+{
+  "name": "LetsDraw",
+  "version": "0.0.1",
+  "description": "Real time drawing in collaboration",
+  "dependencies": {
+    "express": "^4.10.2"
+  },
+  "scripts": {
+	    "start": "node app.js"
+	},
+ "license":"",
+ "repository":{}
+}
