@@ -9,5 +9,6 @@
 	    "start": "node app.js"
 	},
  "license":"",
- "repository":{}
+ "repository":{},
+ "main":"app.js"
 }
