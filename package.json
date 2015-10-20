@@ -3,12 +3,13 @@
   "version": "0.0.1",
   "description": "Real time drawing in collaboration",
   "dependencies": {
-    "express": "^4.10.2"
+    "express": "^4.10.2",
+    "socket.io": "^1.3.7"
   },
   "scripts": {
-	    "start": "node app.js"
-	},
- "license":"",
- "repository":{},
- "main":"app.js"
+    "start": "node app.js"
+  },
+  "license": "",
+  "repository": {},
+  "main": "app.js"
 }
