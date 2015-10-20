@@ -1,16 +1,14 @@
 var express = require('express');
+var http = require('http');
 var app = express();
 app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 8080); 
 app.set('ipaddr', process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1");
-var	server = app.listen(app.get('port') ,app.get('ip'),function(){
-	console.log('App is running');
+
+var server = http.createServer(app).listen(app.get('port') ,app.get('ip'),function(){
+	console.log('App is running at '+ app.get('ip') +':'+ app.get('port'));
 });
 var io = require('socket.io').listen(server);
 app.use(express.static(__dirname+'/public'));
-
-//app.get('/',function(req,res){
-//	res.sendFile(__dirname + '/index.html');
-//});
 
 io.on('connection', function (socket) {
 	  socket.emit('init:connection', { data: 'socket connected' });
@@ -22,6 +20,3 @@ io.on('connection', function (socket) {
 		  socket.broadcast.emit('save:name:from:server',data);
 	  });
 });
-
-
-console.log('LetsDraw is listening port 3000');
